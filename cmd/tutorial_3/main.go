@@ -14,7 +14,7 @@ func main() {
 	var denominator int = 2
 	var result, remainder, err = intDivision(numerator, denominator) // The caller must be able to handle the err as well checking to see if err is nil or not to perform functionality
 	if err != nil {
-		fmt.Printf(err.Error()) // format of accessing the error message
+		fmt.Println(err.Error()) // format of accessing the error message
 	} else if remainder == 0 {
 		fmt.Printf("The result of the integer division is %v", result)
 	} else {
@@ -43,7 +43,7 @@ func intDivision(numerator int, denominator int) (int, int, error) { // return t
 	var err error // if a func can return an error such as dividing by zero, error handling is handled such as adding an error return value
 	// A check must occur that would prompt the error and then return values that make sense to the function
 	if denominator == 0 {
-		err = errors.New("Cannot Divide by Zero")
+		err = errors.New("cannot divide by zero")
 		return 0, 0, err
 	}
 	var result int = numerator / denominator
