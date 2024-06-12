@@ -19,7 +19,7 @@ func main() {
 	fmt.Printf("\nmyRune = %v", myRune)
 
 	var strSlice = []string{"p", "o", "w", "e", "r"}
-	/* Inefficient way of concatanating a string, use the "strings" package
+	/* Inefficient way of concatanating a string, use the "strings" package. This occurs due to this format creating a new string every time a char is appended to the string which takes more time than needed.
 	var catStr = ""
 	for i := range strSlice {
 		catStr += strSlice[i]
