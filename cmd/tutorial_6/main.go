@@ -36,7 +36,7 @@ func canMakeIt(e engine, miles uint8) {
 	}
 }
 
-type engine interface {
+type engine interface { // allows the usage of any engine type as long as it follows the criteria of having the milesLeft() method that has no parameters and returns a uint8
 	milesLeft() uint8
 }
 
