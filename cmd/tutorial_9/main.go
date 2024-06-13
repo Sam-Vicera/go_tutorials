@@ -39,7 +39,7 @@ func checkTofuPrices(website string, c chan string) {
 		var tofuPrice = rand.Float32() * 20
 		fmt.Printf("\nThe price of tofu at %v is %v", website, tofuPrice)
 		if tofuPrice <= MAX_TOFU_PRICE {
-			c <- website
+			c <- website // channel is set to the value of the website that matches the criteria
 			break
 		}
 	}
@@ -47,7 +47,7 @@ func checkTofuPrices(website string, c chan string) {
 
 func sendMessage(chickenChannel chan string, tofuChannel chan string) {
 	select { // switch statement for channels
-	case website := <-chickenChannel:
+	case website := <-chickenChannel: // if a message is received from the chickenChannel, the var website is set to the contents of the channel and then the print statement is executed
 		fmt.Printf("\nText Sent: Found a deal on chicken at %v", website)
 
 	case website := <-tofuChannel:
